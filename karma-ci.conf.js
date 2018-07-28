@@ -13,7 +13,7 @@ module.exports = function (config) {
     ],
     reporters: ['junit'],
     junitReporter: {
-      outputDir: 'karma-results',
+      outputDir: 'test-results',
       outputFile: 'karma-results.xml'
     },
     angularCli: {
