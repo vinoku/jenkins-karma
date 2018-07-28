@@ -9,7 +9,7 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-junit-reporter'),
-      require('@angular-devkit/build-angular')
+      require('@angular-devkit/build-angular/plugins/karma')
     ],
     reporters: ['junit'],
     junitReporter: {
