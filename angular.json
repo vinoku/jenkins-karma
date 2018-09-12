@@ -3,21 +3,17 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "jenkinskarma": {
+    "myProject": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {
-        "@schematics/angular:component": {
-          "styleext": "scss"
-        }
-      },
-      "architect": {
+      "schematics": {},
+      "targets": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/jenkinskarma",
+            "outputPath": "dist/myProject",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -54,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "jenkinskarma:build"
+            "browserTarget": "myProject:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "jenkinskarma:build:production"
+              "browserTarget": "myProject:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "jenkinskarma:build"
+            "browserTarget": "myProject:build"
           }
         },
         "test": {
@@ -99,19 +95,19 @@
         }
       }
     },
-    "jenkinskarma-e2e": {
+    "myProject-e2e": {
       "root": "e2e/",
       "projectType": "application",
-      "architect": {
+      "targets": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "jenkinskarma:serve"
+            "devServerTarget": "myProject:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "jenkinskarma:serve:production"
+              "devServerTarget": "myProject:serve:production"
             }
           }
         },
@@ -127,5 +123,5 @@
       }
     }
   },
-  "defaultProject": "jenkinskarma"
+  "defaultProject": "myProject"
 }
